@@ -1,4 +1,8 @@
 FROM php:5.6-fpm
+MAINTAINER Leozvc <xxfs91@gmail.com>
+
+LABEL Description="This image is used to start the yaf php framework"
+
 WORKDIR /usr/src/php/ext/
 
 #install git
@@ -11,4 +15,8 @@ RUN docker-php-ext-install php-yaf
 
 #clean up
 RUN apt-get clean
+
+
+EXPOSE 9000
+
 CMD ["php-fpm"]
