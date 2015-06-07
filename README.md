@@ -9,11 +9,14 @@ this will useful for developer on Windows development environment
 ##usage
 run a php-fpm controller:
 
-    docker run --name php-fpm  -p 9000:9000 -d leozvc/docker-php-yaf
-    
-run a php-fpm+nginx controller:
-    .......
+    docker run -p 8881:80 -it leozvc/docker-php-yaf
+or
+    docker run -p 8881:80 -d leozvc/docker-php-yaf
 
+the default index page is phpinfo.
+
+you can mount a volume to the work dir:
+    docker run -p 8881:80 -v /data/work:/data/workdir  -d leozvc/docker-php-yaf
 ### Supported tags
 see:https://registry.hub.docker.com/u/leozvc/docker-php-yaf/tags/manage/
 
